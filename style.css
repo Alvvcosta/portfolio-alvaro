@@ -1,0 +1,838 @@
+@charset "UTF-8";
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  box-sizing: border-box;
+  /* Serve para o conteúdo não sair fora da caixa */
+
+  scroll-behavior: smooth;
+  /* Suavizar o scroll */
+}
+
+:root {
+  --wpp-green: #48da7f;
+  --github-purple: #551a8b;
+  --linkedin-blue: #0a66c2;
+  --primary-color: #aed3f7;
+}
+section {
+  min-height: 100vh;
+}
+
+section > h1 {
+  font-size: 2rem;
+}
+
+section:nth-child(even) {
+  background-color: #fff;
+}
+
+section:nth-child(odd) {
+  background-color: #f7f7f7;
+}
+/* /NAVBAR */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  /* Espaçamento igualado entre todos os elementos */
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  padding: 0.7rem 2rem;
+  position: fixed;
+  z-index: 1;
+  /* Para sobrepor outros elementos */
+}
+
+.menu-hamburguer {
+  display: none;
+
+  cursor: pointer;
+}
+.nav-responsive {
+  display: none;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  height: 3.5px;
+  width: 1.6em;
+  background-color: #fff;
+  border-radius: 20px;
+  margin: 0.3rem 0;
+  transition: 0.6s ease;
+}
+
+.change .bar1 {
+  transform: translate(0, 0.6rem) rotate(-45deg);
+}
+.change .bar2 {
+  opacity: 0;
+}
+.change .bar3 {
+  transform: translate(0, -0.475rem) rotate(45deg);
+}
+
+/* .change .bar1 {
+  transform: translate(0,0.5rem);
+} */
+.logo {
+  cursor: pointer;
+  font-size: 0.8rem;
+  & * {
+    font-weight: 600;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  /* Espaçamento entre os elementos */
+}
+
+nav a,
+.nav-responsive a {
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  /* Garantindo que o cursor mudará para mãozinha ao passar o mouse */
+  transition: all 0.4s ease;
+}
+
+/* Ao passar o mouse: */
+nav a:hover,
+.nav-responsive a:hover {
+  color: var(--primary-color);
+}
+
+/* /NAVBAR */
+
+/* HOME SECTION */
+
+.home {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* alinha na horizontal*/
+  padding: 8rem 5rem;
+}
+
+.home-img {
+  width: 30%;
+  margin-top: 1.4rem;
+  margin-right: 2rem;
+}
+
+.home-img img {
+  width: 100%;
+  box-shadow: 0 0 5px #00000031;
+
+  background-color: var(--primary-color);
+  border-radius: 20px;
+  animation: flutuar 2s ease-in-out infinite alternate;
+  position: relative;
+}
+
+@keyframes flutuar {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 1.5rem;
+  }
+}
+
+.home h1 {
+  font-size: 2.5rem;
+}
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  gap: 2rem;
+}
+
+.home-btns {
+  display: flex;
+  gap: 2rem;
+}
+
+.btn {
+  background-color: #000;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 999999px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  transition: all 0.4s ease;
+  border: 2px solid transparent;
+}
+
+.contact-btn {
+  background-color: inherit;
+  /* Pega a cor do fundo do elemento que está atrás */
+  color: #000;
+  border: 2px solid #000;
+}
+
+.home .btn {
+  min-width: 10rem;
+}
+
+.contact-btn:hover {
+  background-color: #000;
+  color: #fff;
+  border: 2px solid #000;
+  box-shadow: 0 0 5px #0000008e;
+  /* Sombra, o primeiro é no eixo x e o segundo no eixo y */
+}
+
+.download-btn:hover {
+  background-color: inherit;
+  color: #000;
+  border: 2px solid #000;
+  box-shadow: 0 0 5px #0000008e;
+}
+
+.home-content p {
+  letter-spacing: 0.7px;
+  line-height: 1.5;
+  /* Altura da linha */
+}
+
+.home-content span {
+  -webkit-text-stroke: 1px #000;
+  text-shadow: 0 0 5px #0000001c;
+  color: #ffffffea; /* or transparent, depending on the effect you want */
+}
+
+/* HOME SECTION */
+
+/* HABILIDADES SECTION */
+.habilidades {
+  padding: 5rem 5rem;
+}
+
+.habilidades-container {
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.habilidades-card,
+.experiencias-card {
+  border: 3px solid #9caab8;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.425);
+  transition: 0.5s ease;
+}
+
+.habilidades-card:hover,
+.experiencias-card:hover {
+  box-shadow: 0 0 23px var(--primary-color);
+  border: 3px solid var(--primary-color);
+}
+
+.habilidades-card h1 {
+  text-align: center;
+  font-weight: 500;
+}
+
+.habilidades-card {
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  aspect-ratio: 3/4;
+  justify-content: space-between;
+  border-radius: 15px;
+  padding: 1.4rem;
+}
+
+/* /HABILIDADES SECTION */
+
+/* EXPERIENCES SECTION */
+
+.experiencias-card-title i {
+  transition: 0.3s ease;
+}
+
+.experiencias-card:hover .experiencias-card-title i {
+  color: var(--linkedin-blue);
+}
+.experiencias {
+  padding: 4rem 5rem;
+}
+
+.experiencias-container {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.experiencias-card-title {
+  text-align: center;
+  top: 1rem;
+}
+
+.experiencias-card {
+  width: 22rem;
+  height: 30rem;
+  padding: 1rem 0.5rem;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.experiencias-card p {
+  font-size: 13px;
+  text-indent: 25px;
+  text-align: justify;
+  line-height: 1.5rem;
+}
+
+.experiencias-card-content {
+  height: 85%;
+  display: flex;
+  align-items: center;
+}
+
+/* EXPERIENCES SECTION */
+
+/* SOBRE MIM SECTION */
+
+.sobre-mim {
+  padding: 6rem 5rem;
+}
+.sobre-mim-bloco {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+.sobre-mim-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  border-bottom: 5px solid black;
+  border-right: 5px solid black;
+  border-image: linear-gradient(160deg, transparent 10%, rgb(174, 211, 247)) 1;
+  width: 60%;
+  padding: 0 2rem;
+  padding-bottom: 0.5rem;
+}
+.sobre-mim-content p {
+  text-align: justify;
+}
+
+.sobre-mim-img {
+  width: 30%;
+}
+
+.sobre-mim-img img {
+  width: 100%;
+  border-radius: 15%;
+  background-color: rgb(174, 211, 247);
+}
+
+/* /SOBRE MIM SECTION */
+
+/* CONTATO SECTION */
+
+.contato {
+  padding: 6rem 5rem;
+}
+
+.contato-links {
+  display: flex;
+  border-radius: 45px;
+  font-size: 7rem;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 0;
+}
+
+.contato-link {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.459);
+  border: 2px solid #9caab8;
+  border-radius: 17px;
+  height: 7rem;
+  width: 20rem;
+  display: flex;
+  align-items: center;
+  /* selecionando todos os elementos de dentro do contato-link */
+  & * {
+    color: #000;
+  }
+}
+
+.whapp:hover {
+  box-shadow: 0 0 10px var(--wpp-green);
+  color: var(--wpp-green);
+  border: 2px solid var(--wpp-green);
+}
+
+.linkedin:hover {
+  box-shadow: 0 0 10px var(--linkedin-blue);
+  color: var(--linkedin-blue);
+  border: 2px solid var(--linkedin-blue);
+}
+
+.github:hover {
+  box-shadow: 0 0 10px var(--github-purple);
+  color: var(--linkedin-blue);
+  border: 2px solid var(--github-purple);
+}
+
+.contato-links a {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  width: 33rem;
+}
+.whapp a {
+  color: black;
+}
+
+.whapp a *:not(i):hover {
+  color: var(--wpp-green);
+}
+
+.whapp i {
+  color: var(--wpp-green);
+}
+
+.whapp i:hover {
+  background-color: var(--wpp-green);
+  color: #fff;
+  border-radius: 20%;
+  transition: all 1s ease;
+}
+
+.github a *:not(i):hover {
+  color: var(--github-purple);
+}
+
+.github i {
+  color: var(--github-purple);
+}
+
+.github i:hover {
+  background-color: var(--github-purple);
+  color: #fff;
+  border-radius: 20%;
+  transition: all 1s ease;
+}
+
+.linkedin a {
+  color: black;
+}
+.linkedin a *:not(i):hover {
+  color: var(--linkedin-blue);
+}
+
+.linkedin i {
+  color: var(--linkedin-blue);
+}
+.linkedin i:hover {
+  background-color: var(--linkedin-blue);
+  color: #fff;
+  border-radius: 20%;
+  transition: all 1s ease;
+}
+
+.contato-info h3 {
+  font-size: 3rem;
+}
+.contato-info p {
+  font-size: 0.9rem;
+}
+.contato-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 1s ease;
+}
+
+/* CONTATO SECTION */
+
+/* Bloco do Menu Lateral*/
+
+.nav-responsive {
+  position: absolute;
+  top: 100%;
+  display: none;
+  flex-direction: column;
+  right: 0;
+  background-color: #000;
+  gap: 1rem;
+  padding: 0.9rem 2rem;
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+}
+
+/* /Bloco do Menu Lateral*/
+
+/*
+Rodapé*/
+footer {
+  height: 6rem;
+  background-color: #000;
+  width: 100%;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+}
+.rodape {
+  font-weight: 100;
+}
+
+.tanana i {
+  font-size: 1rem;
+  opacity: 0.5;
+  transition: 0.5s ease;
+  color: white;
+}
+.tanana {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  gap: 0.7rem;
+}
+.tanana i:hover {
+  opacity: 1;
+  transform: translateY(
+    -0.2rem
+  ); /*para se transportar noa eixo Y a medida que for selecionado*/
+}
+
+/*
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+..
+*/
+
+/*  RESPONSIVIDADE */
+
+/* Abaixo as mudanças que vão ocorrer de acordo com o tamanho da tela */
+@media (min-width: 0px) {
+  /* header {
+    background-color: red;
+  } */
+  .menu-hamburguer {
+    display: block;
+  }
+  nav {
+    display: none;
+  }
+
+  .home {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .home-content {
+    width: 100%;
+  }
+  .home-img {
+    width: 70%;
+    margin: 0;
+    margin-top: 2rem;
+  }
+  .home-btns {
+    justify-content: center;
+  }
+  .contato-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .contato {
+    justify-content: center;
+  }
+  .habilidades-container {
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .habilidades,
+  .experiencias {
+    padding: 3rem 3rem;
+    margin-top: 4rem;
+  }
+
+  .habilidades-card {
+    width: 80%;
+    margin: auto;
+  }
+  .experiencias h1,
+  .habilidades h1 {
+    text-align: center;
+    margin-top: 3rem;
+  }
+  .experiencias-container {
+    justify-content: center;
+
+    flex-wrap: wrap;
+  }
+
+  .experiencias-card {
+    width: 100%;
+  }
+  .sobre-mim h1 {
+    text-align: center;
+  }
+  .sobre-mim-bloco {
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 2rem;
+  }
+  .sobre-mim-img {
+    width: 45%;
+  }
+  .sobre-mim-content {
+    width: 100%;
+  }
+  i {
+    font-size: 5rem;
+  }
+}
+
+@media (min-width: 576px) {
+  /* header {
+    background-color: green;
+  } */
+}
+
+@media (min-width: 768px) {
+  /* header {
+    background-color: blue;
+  } */
+  .home {
+    flex-direction: row;
+    align-items: center;
+    padding: 5rem 3rem;
+    gap: 2rem;
+  }
+  .home-img {
+    width: 50%;
+  }
+  .habilidades-container {
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+  }
+  .habilidades-card {
+    display: flex;
+    flex-direction: column;
+    width: 17.5rem;
+  }
+  .habilidades {
+    padding: 0 2rem;
+  }
+  .experiencias-container {
+    margin-top: 2rem;
+    width: 60%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .experiencias-card {
+    margin: auto;
+  }
+  .habilidades,
+  .experiencias {
+    padding: 4rem 3rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .sobre-mim-img {
+    width: 35%;
+  }
+}
+
+@media (min-width: 992px) {
+  /* header {
+    background-color: black;
+  } */
+  .home {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 8rem 5rem;
+  }
+  .menu-hamburguer {
+    display: none;
+  }
+  nav {
+    display: flex;
+  }
+
+  .experiencias-card {
+    width: 22rem;
+  }
+  .experiencias-container {
+    flex-direction: row;
+    gap: 1rem;
+    width: 100%;
+  }
+  .experiencias {
+    padding-top: 4rem;
+  }
+
+  .sobre-mim-bloco {
+    flex-direction: row;
+    gap: 4rem;
+  }
+  .sobre-mim-img {
+    width: 30%;
+  }
+  .sobre-mim-content {
+    width: 70%;
+    margin: auto;
+  }
+  .home-btns {
+    justify-content: start;
+  }
+  .home-content {
+    width: 55%;
+  }
+  .home-img {
+    width: 30%;
+  }
+}
+/*  RESPONSIVIDADE*/
