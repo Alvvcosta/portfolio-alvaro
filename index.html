@@ -51,7 +51,12 @@
         <div class="home-title">
           <h1>Olá,</h1>
           <h1>Eu sou Álvaro</h1>
-          <h1><span>Desenvolvedor Web.</span></h1>
+          <div class="typed-container"></div>
+          <div id="typed-strings">
+            <h1>Desenvolvedor Web.</h1>
+            <h1>Analista de Produção.</h1>
+          </div>
+          <span id="typed"></span>
         </div>
         <p>
           "Programar é mais do que técnica — é transformar ideias em soluções.
@@ -266,5 +271,20 @@
       </div>
     </footer>
     <!-- /CONTATO SECTION -->
+
+    <!-- TYPED JS EFFECT -->
+    <!-- Para animar o texto das funções  -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <script>
+      var typed = new Typed("#typed", {
+        stringsElement: "#typed-strings",
+        backSpeed: 40,
+        typeSpeed: 40,
+        loop: true,
+      });
+    </script>
+
+    <!-- /TYPED JS EFFECT -->
   </body>
 </html>
