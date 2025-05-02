@@ -127,7 +127,7 @@ nav a:hover,
   display: flex;
   flex-direction: row;
   justify-content: space-between; /* alinha na horizontal*/
-  padding: 6rem .5rem;
+  padding: 6rem 0.5rem;
 }
 
 .home-img {
@@ -216,7 +216,9 @@ nav a:hover,
   /* Altura da linha */
 }
 
-#typed-strings h1, #typed, .typed-cursor {
+#typed-strings h1,
+#typed,
+.typed-cursor {
   font-size: 2rem;
   -webkit-text-stroke: 1px #000;
   text-shadow: 0 0 5px #0000001c;
@@ -359,9 +361,9 @@ nav a:hover,
 
 .contato {
   display: flex;
-  flex-direction:column;
-justify-content: center;
-
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-between;
 }
 
 .contato-links {
@@ -372,9 +374,8 @@ justify-content: center;
   justify-content: space-between;
   flex-direction: column;
   height: 100%;
-  
-  gap: 1rem;
 
+  gap: 1rem;
 }
 
 .contato-link {
@@ -468,14 +469,15 @@ justify-content: center;
 
 .contato-info h3 {
   font-size: 3rem;
+  text-align: start;
 }
+
 .contato-info p {
   font-size: 0.9rem;
 }
 .contato-info {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   transition: all 1s ease;
 }
 
@@ -537,115 +539,6 @@ footer {
 ..
 ..
 ..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
-..
 */
 
 /*  RESPONSIVIDADE */
@@ -662,7 +555,10 @@ footer {
     display: none;
   }
 
-  .home h1, #typed-strings h1, #typed, .typed-cursor {
+  .home h1,
+  #typed-strings h1,
+  #typed,
+  .typed-cursor {
     font-size: 2rem;
   }
 
@@ -697,15 +593,12 @@ footer {
 
   .habilidades,
   .experiencias {
-    
-    
     padding: 2rem 2rem;
   }
 
   .habilidades-card {
     width: 100%;
     margin: auto;
-   
   }
   .experiencias h1,
   .habilidades h1 {
@@ -849,4 +742,4 @@ footer {
     width: 30%;
   }
 }
-/*  RESPONSIVIDADE
+/*  RESPONSIVIDADE */
