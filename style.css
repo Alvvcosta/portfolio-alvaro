@@ -13,6 +13,7 @@
 
   scroll-behavior: smooth;
   /* Suavizar o scroll */
+  -webkit-tap-highlight-color: transparent;
 }
 
 :root {
